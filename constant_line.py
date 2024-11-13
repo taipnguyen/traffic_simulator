@@ -7,6 +7,7 @@ clock = pygame.time.Clock()
 running = True
 dt = 0 
 time_passed = 0 
+traffic_light_time = 6 
 
 class car():
     def __init__(self, x, next_car = None):
@@ -100,7 +101,7 @@ while running:
         order[i].car_pos = mover(dt, order[i].get_pos(), order[i].get_velocity())
     
     pygame.display.flip()
-    if int(time_passed) // 3 % 2:
+    if int(time_passed) // traffic_light_time % 2:
         light = light_color.GREEN
     else:
         light = light_color.RED

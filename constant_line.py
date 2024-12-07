@@ -42,7 +42,8 @@ def stop_before_hitting(dt, car_in_front, car_size, initial_velocity, car_behind
     three_second_distance = car_behind_velocity * 3
     velocity = car_behind_velocity + (initial_velocity/3) * dt
     if car_behind.x + car_size.x + three_second_distance >= car_in_front.x:
-        velocity = car_behind_velocity + (-initial_velocity/3) * dt   
+        dv = abs(car_in_front.x - (car_behind.x + car_size.x) - three_second_distance)/3
+        velocity = car_behind_velocity - dv
     return velocity
 
 def stop_before_hitting_light(dt, car_in_front, car_size, initial_velocity, car_behind, car_behind_velocity, light):

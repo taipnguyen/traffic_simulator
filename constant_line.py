@@ -69,7 +69,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     
-    screen.fill("purple")
+    screen.fill("sky blue")
     
     # Car
     for i in range(len(order)):
